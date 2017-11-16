@@ -110,8 +110,11 @@ namespace Steam_Auto_Login_v2
             Login.SaveLogin();
             Pass.SavePass();
             Properties.Settings.Default.Save();
-            MessageBox.Show("Запусти опять приложение", "sudo reboot -r now");
-            Application.Exit();
+            //Закрываемcя и запускаем Main
+            Hide();
+            Main main = new Main();
+            main.ShowDialog();
+            this.Close();
         }
 
         private void textBox_SteamPath_TextChanged(object sender, EventArgs e)
