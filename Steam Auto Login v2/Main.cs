@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 //Copyright © maksim789456  2017
@@ -113,6 +114,35 @@ namespace Steam_Auto_Login_v2
             string passL = Program.Pass.Pass2;
             bool tcpON = checkBox1.Checked;
             Start.Starting(loginL, passL, tcpON);
+        }
+
+        private void selectSteamPath_Click(object sender, EventArgs e)
+        {
+            if(folderBrowserDialogMain.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.SteamPath = folderBrowserDialogMain.SelectedPath;
+            }
+        }
+
+        private void enterAccount_Click(object sender, EventArgs e)
+        {
+            LoginF f2 = new LoginF();
+            f2.ShowDialog();
+        }
+
+        private void manualStart_Click(object sender, EventArgs e)
+        {
+            Process.Start(Properties.Settings.Default.SteamPath);
+        }
+
+        private void mExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void infoAboutProgramm_Click(object sender, EventArgs e)
+        {
+            //Не доделал
         }
     }
 }

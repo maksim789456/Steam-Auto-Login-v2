@@ -252,6 +252,10 @@
             this.textBox_SteamPath.TabIndex = 25;
             this.textBox_SteamPath.TextChanged += new System.EventHandler(this.textBox_SteamPath_TextChanged);
             // 
+            // folderBrowserDialogFirstStart
+            // 
+            this.folderBrowserDialogFirstStart.RootFolder = System.Environment.SpecialFolder.ProgramFilesX86;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(211, 212);

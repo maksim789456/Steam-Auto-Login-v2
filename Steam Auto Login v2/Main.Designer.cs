@@ -35,16 +35,17 @@
             this.acc2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.enterAccount = new System.Windows.Forms.ToolStripMenuItem();
-            this.выборФайлаSteamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ручнойЗапускToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectSteamPath = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.mExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.infoAboutProgramm = new System.Windows.Forms.ToolStripMenuItem();
             this.acc4 = new System.Windows.Forms.Button();
             this.edit_data = new System.Windows.Forms.Button();
             this.login_in = new System.Windows.Forms.Button();
-            this.информацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.folderBrowserDialogMain = new System.Windows.Forms.FolderBrowserDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,49 +103,68 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.менюToolStripMenuItem,
-            this.информацияToolStripMenuItem});
+            this.menuMenu,
+            this.infoMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(279, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // менюToolStripMenuItem
+            // menuMenu
             // 
-            this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.enterAccount,
-            this.выборФайлаSteamToolStripMenuItem,
-            this.ручнойЗапускToolStripMenuItem,
-            this.выходToolStripMenuItem});
-            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.менюToolStripMenuItem.Text = "Меню";
+            this.selectSteamPath,
+            this.manualStart,
+            this.mExit});
+            this.menuMenu.Name = "menuMenu";
+            this.menuMenu.Size = new System.Drawing.Size(53, 20);
+            this.menuMenu.Text = "Меню";
             // 
             // enterAccount
             // 
             this.enterAccount.Name = "enterAccount";
             this.enterAccount.Size = new System.Drawing.Size(194, 22);
             this.enterAccount.Text = "Вход в другой аккаунт";
+            this.enterAccount.Click += new System.EventHandler(this.enterAccount_Click);
             // 
-            // выборФайлаSteamToolStripMenuItem
+            // selectSteamPath
             // 
-            this.выборФайлаSteamToolStripMenuItem.Name = "выборФайлаSteamToolStripMenuItem";
-            this.выборФайлаSteamToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.выборФайлаSteamToolStripMenuItem.Text = "Выбор файла Steam...";
+            this.selectSteamPath.Name = "selectSteamPath";
+            this.selectSteamPath.Size = new System.Drawing.Size(194, 22);
+            this.selectSteamPath.Text = "Выбор файла Steam...";
+            this.selectSteamPath.Click += new System.EventHandler(this.selectSteamPath_Click);
             // 
-            // ручнойЗапускToolStripMenuItem
+            // manualStart
             // 
-            this.ручнойЗапускToolStripMenuItem.Name = "ручнойЗапускToolStripMenuItem";
-            this.ручнойЗапускToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.ручнойЗапускToolStripMenuItem.Text = "Ручной запуск";
+            this.manualStart.Name = "manualStart";
+            this.manualStart.Size = new System.Drawing.Size(194, 22);
+            this.manualStart.Text = "Ручной запуск";
+            this.manualStart.Click += new System.EventHandler(this.manualStart_Click);
             // 
-            // выходToolStripMenuItem
+            // mExit
             // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.ShowShortcutKeys = false;
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
+            this.mExit.Name = "mExit";
+            this.mExit.ShowShortcutKeys = false;
+            this.mExit.Size = new System.Drawing.Size(194, 22);
+            this.mExit.Text = "Выход";
+            this.mExit.Click += new System.EventHandler(this.mExit_Click);
+            // 
+            // infoMenu
+            // 
+            this.infoMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.infoAboutProgramm});
+            this.infoMenu.Name = "infoMenu";
+            this.infoMenu.Size = new System.Drawing.Size(93, 20);
+            this.infoMenu.Text = "Информация";
+            // 
+            // infoAboutProgramm
+            // 
+            this.infoAboutProgramm.Name = "infoAboutProgramm";
+            this.infoAboutProgramm.Size = new System.Drawing.Size(152, 22);
+            this.infoAboutProgramm.Text = "О программе";
+            this.infoAboutProgramm.Click += new System.EventHandler(this.infoAboutProgramm_Click);
             // 
             // acc4
             // 
@@ -176,19 +196,9 @@
             this.login_in.UseVisualStyleBackColor = true;
             this.login_in.Click += new System.EventHandler(this.login_in_Click);
             // 
-            // информацияToolStripMenuItem
+            // folderBrowserDialogMain
             // 
-            this.информацияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оПрограммеToolStripMenuItem});
-            this.информацияToolStripMenuItem.Name = "информацияToolStripMenuItem";
-            this.информацияToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.информацияToolStripMenuItem.Text = "Информация";
-            // 
-            // оПрограммеToolStripMenuItem
-            // 
-            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.folderBrowserDialogMain.RootFolder = System.Environment.SpecialFolder.ProgramFilesX86;
             // 
             // Main
             // 
@@ -225,15 +235,16 @@
         private System.Windows.Forms.Button acc2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuMenu;
         private System.Windows.Forms.ToolStripMenuItem enterAccount;
-        private System.Windows.Forms.ToolStripMenuItem выборФайлаSteamToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ручнойЗапускToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectSteamPath;
+        private System.Windows.Forms.ToolStripMenuItem manualStart;
+        private System.Windows.Forms.ToolStripMenuItem mExit;
         private System.Windows.Forms.Button acc4;
         private System.Windows.Forms.Button edit_data;
         private System.Windows.Forms.Button login_in;
-        private System.Windows.Forms.ToolStripMenuItem информацияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infoMenu;
+        private System.Windows.Forms.ToolStripMenuItem infoAboutProgramm;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogMain;
     }
 }
