@@ -7,16 +7,47 @@ namespace Steam_Auto_Login_v2
 {
     class Start
     {
-        public static void Starting(string loginL, string passL,bool tcpON)
+        public static void Starting(string loginL, string passL, bool tcpON)
         {
-            string SteamPath = Properties.Settings.Default.SteamPath;
+            Stoping();
             string DataL = "-login" + " " + loginL + " " + passL;
             if (tcpON == true)
             {
-                Process.Start(SteamPath, DataL + " -tcp");
+                Process procTcp = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = Properties.Settings.Default.SteamPath,
+                        Arguments = DataL + " -tcp",
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        CreateNoWindow = true
+                    }
+                };
+                procTcp.Start();
             }
             else
-                Process.Start(SteamPath, DataL);
+            {
+                Process proc = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = Properties.Settings.Default.SteamPath,
+                        Arguments = DataL,
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        CreateNoWindow = true
+                    }
+                };
+                proc.Start();
+            }
+        }
+        
+        public static void Stoping()
+        {
+            Process.Start("taskkill", "/F /IM GameOverlayUI.exe");
+            Process.Start("taskkill", "/F /IM Steam.exe");
+            System.Threading.Thread.Sleep(2000);
         }
     }
 }
