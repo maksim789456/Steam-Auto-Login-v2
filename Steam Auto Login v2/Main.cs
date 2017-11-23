@@ -142,7 +142,8 @@ namespace Steam_Auto_Login_v2
 
         private void infoAboutProgramm_Click(object sender, EventArgs e)
         {
-            //Не доделал
+            Info f3 = new Info();
+            f3.ShowDialog();
         }
     }
 }
