@@ -74,42 +74,12 @@ namespace Steam_Auto_Login_v2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //Acc1
-            if (checkBox_acc1.Checked)
-            {
-                Properties.Settings.Default.AccOn1 = true;
-                Properties.Settings.Default.Name1 = textBox_Name1.Text;
-            }
-            else
-                Properties.Settings.Default.AccOn1 = false;
-            //Acc2
-            if (checkBox_acc2.Checked)
-            {
-                Properties.Settings.Default.AccOn2 = true;
-                Properties.Settings.Default.Name2 = textBox_Name1.Text;
-            }
-            else
-                Properties.Settings.Default.AccOn2 = false;
-            //Acc3
-            if (checkBox_acc3.Checked)
-            {
-                Properties.Settings.Default.AccOn3 = true;
-                Properties.Settings.Default.Name3 = textBox_Name1.Text;
-            }
-            else
-                Properties.Settings.Default.AccOn3 = false;
-            //Acc4
-            if (checkBox_acc4.Checked)
-            {
-                Properties.Settings.Default.AccOn4 = true;
-                Properties.Settings.Default.Name4 = textBox_Name1.Text;
-            }
-            else
-                Properties.Settings.Default.AccOn4 = false;
+            Checking();
             Properties.Settings.Default.firstStart = true;
             Login.SaveLogin();
             Pass.SavePass();
             Properties.Settings.Default.Save();
+
             //Закрываемcя и запускаем Main
             Hide();
             Main main = new Main();
@@ -128,6 +98,141 @@ namespace Steam_Auto_Login_v2
             {
                 textBox_SteamPath.Text = folderBrowserDialogFirstStart.SelectedPath;
                 Properties.Settings.Default.SteamPath = textBox_SteamPath.Text;
+            }
+        }
+
+        private void Checking ()
+        {
+            //Acc1
+            if (checkBox_acc1.Checked)
+            {
+                Properties.Settings.Default.AccOn1 = true;
+                Properties.Settings.Default.Name1 = textBox_Name1.Text;
+            }
+            else
+                Properties.Settings.Default.AccOn1 = false;
+
+            //Acc2
+            if (checkBox_acc2.Checked)
+            {
+                Properties.Settings.Default.AccOn2 = true;
+                Properties.Settings.Default.Name2 = textBox_Name1.Text;
+            }
+            else
+                Properties.Settings.Default.AccOn2 = false;
+
+            //Acc3
+            if (checkBox_acc3.Checked)
+            {
+                Properties.Settings.Default.AccOn3 = true;
+                Properties.Settings.Default.Name3 = textBox_Name1.Text;
+            }
+            else
+                Properties.Settings.Default.AccOn3 = false;
+
+            //Acc4
+            if (checkBox_acc4.Checked)
+            {
+                Properties.Settings.Default.AccOn4 = true;
+                Properties.Settings.Default.Name4 = textBox_Name1.Text;
+            }
+            else
+                Properties.Settings.Default.AccOn4 = false;
+
+            //NotifyIcon
+            if (checkBox_notifyIcon.Checked == true)
+            {
+                Properties.Settings.Default.NotifyIcon = true;
+            }
+            else
+                Properties.Settings.Default.NotifyIcon = false;
+        }
+
+        private void comboBoxAccNumber_SelectedItemChanged(object sender, EventArgs e)
+        {
+            if (comboBoxAccNumber.SelectedIndex == 0)
+            {
+                
+            }
+            if (comboBoxAccNumber.SelectedIndex == 1)
+            {
+                
+            }
+            if (comboBoxAccNumber.SelectedIndex == 2)
+            {
+                
+            }
+            if (comboBoxAccNumber.SelectedIndex == 3)
+            {
+                
+            }
+        }
+
+        private void comboBoxTimer_SelectedItemChanged(object sender, EventArgs e)
+        {
+            if (comboBoxAccNumber.SelectedIndex == 0)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 1)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 2)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 3)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 4)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 5)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 6)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 7)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 8)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 9)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 10)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 11)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 12)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 13)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 14)
+            {
+
+            }
+            if (comboBoxAccNumber.SelectedIndex == 15)
+            {
+
             }
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.label1 = new System.Windows.Forms.Label();
             this.acc1 = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.menuMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.enterAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.selectSteamPath = new System.Windows.Forms.ToolStripMenuItem();
-            this.manualStart = new System.Windows.Forms.ToolStripMenuItem();
             this.mExit = new System.Windows.Forms.ToolStripMenuItem();
             this.infoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.infoAboutProgramm = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +46,20 @@
             this.edit_data = new System.Windows.Forms.Button();
             this.login_in = new System.Windows.Forms.Button();
             this.folderBrowserDialogMain = new System.Windows.Forms.FolderBrowserDialog();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip_ = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.enterAccount_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectSteamPath_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStartToolStripMenu_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStart_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStartTCP_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1_ = new System.Windows.Forms.ToolStripSeparator();
+            this.mExit_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStartToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStartTCP = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.contextMenuStrip_.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -116,7 +129,7 @@
             this.menuMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.enterAccount,
             this.selectSteamPath,
-            this.manualStart,
+            this.manualStartToolStripMenu,
             this.mExit});
             this.menuMenu.Name = "menuMenu";
             this.menuMenu.Size = new System.Drawing.Size(53, 20);
@@ -135,13 +148,6 @@
             this.selectSteamPath.Size = new System.Drawing.Size(194, 22);
             this.selectSteamPath.Text = "Выбор файла Steam...";
             this.selectSteamPath.Click += new System.EventHandler(this.selectSteamPath_Click);
-            // 
-            // manualStart
-            // 
-            this.manualStart.Name = "manualStart";
-            this.manualStart.Size = new System.Drawing.Size(194, 22);
-            this.manualStart.Text = "Ручной запуск";
-            this.manualStart.Click += new System.EventHandler(this.manualStart_Click);
             // 
             // mExit
             // 
@@ -162,7 +168,7 @@
             // infoAboutProgramm
             // 
             this.infoAboutProgramm.Name = "infoAboutProgramm";
-            this.infoAboutProgramm.Size = new System.Drawing.Size(152, 22);
+            this.infoAboutProgramm.Size = new System.Drawing.Size(149, 22);
             this.infoAboutProgramm.Text = "О программе";
             this.infoAboutProgramm.Click += new System.EventHandler(this.infoAboutProgramm_Click);
             // 
@@ -200,6 +206,90 @@
             // 
             this.folderBrowserDialogMain.RootFolder = System.Environment.SpecialFolder.ProgramFilesX86;
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.contextMenuStrip_;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Steam Auto Login";
+            this.notifyIcon.Visible = true;
+            // 
+            // contextMenuStrip_
+            // 
+            this.contextMenuStrip_.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.enterAccount_,
+            this.selectSteamPath_,
+            this.manualStartToolStripMenu_,
+            this.toolStripSeparator1_,
+            this.mExit_});
+            this.contextMenuStrip_.Name = "contextMenuStrip_";
+            this.contextMenuStrip_.Size = new System.Drawing.Size(195, 98);
+            // 
+            // enterAccount_
+            // 
+            this.enterAccount_.Name = "enterAccount_";
+            this.enterAccount_.Size = new System.Drawing.Size(194, 22);
+            this.enterAccount_.Text = "Вход в другой аккаунт";
+            // 
+            // selectSteamPath_
+            // 
+            this.selectSteamPath_.Name = "selectSteamPath_";
+            this.selectSteamPath_.Size = new System.Drawing.Size(194, 22);
+            this.selectSteamPath_.Text = "Выбор файла Steam...";
+            // 
+            // manualStartToolStripMenu_
+            // 
+            this.manualStartToolStripMenu_.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manualStart_,
+            this.manualStartTCP_});
+            this.manualStartToolStripMenu_.Name = "manualStartToolStripMenu_";
+            this.manualStartToolStripMenu_.Size = new System.Drawing.Size(194, 22);
+            this.manualStartToolStripMenu_.Text = "Ручной запуск";
+            // 
+            // manualStart_
+            // 
+            this.manualStart_.Name = "manualStart_";
+            this.manualStart_.Size = new System.Drawing.Size(203, 22);
+            this.manualStart_.Text = "Обычный";
+            // 
+            // manualStartTCP_
+            // 
+            this.manualStartTCP_.Name = "manualStartTCP_";
+            this.manualStartTCP_.Size = new System.Drawing.Size(203, 22);
+            this.manualStartTCP_.Text = "С использованием TCP";
+            // 
+            // toolStripSeparator1_
+            // 
+            this.toolStripSeparator1_.Name = "toolStripSeparator1_";
+            this.toolStripSeparator1_.Size = new System.Drawing.Size(191, 6);
+            // 
+            // mExit_
+            // 
+            this.mExit_.Name = "mExit_";
+            this.mExit_.Size = new System.Drawing.Size(194, 22);
+            this.mExit_.Text = "Выход";
+            // 
+            // manualStartToolStripMenu
+            // 
+            this.manualStartToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manualStart,
+            this.manualStartTCP});
+            this.manualStartToolStripMenu.Name = "manualStartToolStripMenu";
+            this.manualStartToolStripMenu.Size = new System.Drawing.Size(194, 22);
+            this.manualStartToolStripMenu.Text = "Ручной запуск";
+            // 
+            // manualStart
+            // 
+            this.manualStart.Name = "manualStart";
+            this.manualStart.Size = new System.Drawing.Size(203, 22);
+            this.manualStart.Text = "Обычный";
+            // 
+            // manualStartTCP
+            // 
+            this.manualStartTCP.Name = "manualStartTCP";
+            this.manualStartTCP.Size = new System.Drawing.Size(203, 22);
+            this.manualStartTCP.Text = "С использованием TCP";
+            this.manualStartTCP.Click += new System.EventHandler(this.manualStartTCP_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,9 +309,11 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Main";
+            this.ShowInTaskbar = false;
             this.Text = "Steam Auto Login";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.contextMenuStrip_.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +330,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuMenu;
         private System.Windows.Forms.ToolStripMenuItem enterAccount;
         private System.Windows.Forms.ToolStripMenuItem selectSteamPath;
-        private System.Windows.Forms.ToolStripMenuItem manualStart;
         private System.Windows.Forms.ToolStripMenuItem mExit;
         private System.Windows.Forms.Button acc4;
         private System.Windows.Forms.Button edit_data;
@@ -246,5 +337,17 @@
         private System.Windows.Forms.ToolStripMenuItem infoMenu;
         private System.Windows.Forms.ToolStripMenuItem infoAboutProgramm;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialogMain;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip_;
+        private System.Windows.Forms.ToolStripMenuItem enterAccount_;
+        private System.Windows.Forms.ToolStripMenuItem selectSteamPath_;
+        private System.Windows.Forms.ToolStripMenuItem manualStartToolStripMenu_;
+        private System.Windows.Forms.ToolStripMenuItem manualStart_;
+        private System.Windows.Forms.ToolStripMenuItem manualStartTCP_;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1_;
+        private System.Windows.Forms.ToolStripMenuItem mExit_;
+        private System.Windows.Forms.ToolStripMenuItem manualStartToolStripMenu;
+        private System.Windows.Forms.ToolStripMenuItem manualStart;
+        private System.Windows.Forms.ToolStripMenuItem manualStartTCP;
     }
 }

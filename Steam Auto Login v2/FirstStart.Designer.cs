@@ -55,6 +55,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.checkBox_notifyIcon = new System.Windows.Forms.CheckBox();
+            this.checkBox_autoLogin = new System.Windows.Forms.CheckBox();
+            this.comboBoxTimer = new System.Windows.Forms.DomainUpDown();
+            this.comboBoxAccNumber = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
             // 
             // textBox_Name1
@@ -238,7 +242,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(16, 180);
+            this.label5.Location = new System.Drawing.Point(12, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(227, 26);
             this.label5.TabIndex = 24;
@@ -246,7 +250,7 @@
             // 
             // textBox_SteamPath
             // 
-            this.textBox_SteamPath.Location = new System.Drawing.Point(16, 212);
+            this.textBox_SteamPath.Location = new System.Drawing.Point(12, 245);
             this.textBox_SteamPath.Name = "textBox_SteamPath";
             this.textBox_SteamPath.Size = new System.Drawing.Size(189, 20);
             this.textBox_SteamPath.TabIndex = 25;
@@ -258,7 +262,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(211, 212);
+            this.button1.Location = new System.Drawing.Point(207, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 20);
             this.button1.TabIndex = 26;
@@ -268,7 +272,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(297, 180);
+            this.button2.Location = new System.Drawing.Point(293, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 52);
             this.button2.TabIndex = 27;
@@ -285,11 +289,71 @@
             this.label6.TabIndex = 28;
             this.label6.Text = "ON/OFF";
             // 
+            // checkBox_notifyIcon
+            // 
+            this.checkBox_notifyIcon.AutoSize = true;
+            this.checkBox_notifyIcon.Location = new System.Drawing.Point(16, 193);
+            this.checkBox_notifyIcon.Name = "checkBox_notifyIcon";
+            this.checkBox_notifyIcon.Size = new System.Drawing.Size(236, 17);
+            this.checkBox_notifyIcon.TabIndex = 29;
+            this.checkBox_notifyIcon.Text = "Включить значок в области уведомлений";
+            this.checkBox_notifyIcon.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_autoLogin
+            // 
+            this.checkBox_autoLogin.AutoSize = true;
+            this.checkBox_autoLogin.Location = new System.Drawing.Point(16, 167);
+            this.checkBox_autoLogin.Name = "checkBox_autoLogin";
+            this.checkBox_autoLogin.Size = new System.Drawing.Size(179, 17);
+            this.checkBox_autoLogin.TabIndex = 30;
+            this.checkBox_autoLogin.Text = "Включить авто-вход в аккаунт";
+            this.checkBox_autoLogin.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxTimer
+            // 
+            this.comboBoxTimer.Items.Add("1 сек.");
+            this.comboBoxTimer.Items.Add("3 сек.");
+            this.comboBoxTimer.Items.Add("5 сек.");
+            this.comboBoxTimer.Items.Add("10 сек.");
+            this.comboBoxTimer.Items.Add("15 сек.");
+            this.comboBoxTimer.Items.Add("20 сек.");
+            this.comboBoxTimer.Items.Add("25 сек.");
+            this.comboBoxTimer.Items.Add("30 сек.");
+            this.comboBoxTimer.Items.Add("1 мин.");
+            this.comboBoxTimer.Items.Add("3 мин.");
+            this.comboBoxTimer.Items.Add("5 мин.");
+            this.comboBoxTimer.Items.Add("10 мин.");
+            this.comboBoxTimer.Items.Add("15 мин.");
+            this.comboBoxTimer.Items.Add("20 мин.");
+            this.comboBoxTimer.Items.Add("25 мин.");
+            this.comboBoxTimer.Items.Add("30 мин.");
+            this.comboBoxTimer.Location = new System.Drawing.Point(245, 167);
+            this.comboBoxTimer.Name = "comboBoxTimer";
+            this.comboBoxTimer.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxTimer.TabIndex = 32;
+            this.comboBoxTimer.SelectedItemChanged += new System.EventHandler(this.comboBoxTimer_SelectedItemChanged);
+            // 
+            // comboBoxAccNumber
+            // 
+            this.comboBoxAccNumber.Items.Add("1");
+            this.comboBoxAccNumber.Items.Add("2");
+            this.comboBoxAccNumber.Items.Add("3");
+            this.comboBoxAccNumber.Items.Add("4");
+            this.comboBoxAccNumber.Location = new System.Drawing.Point(198, 167);
+            this.comboBoxAccNumber.Name = "comboBoxAccNumber";
+            this.comboBoxAccNumber.Size = new System.Drawing.Size(41, 20);
+            this.comboBoxAccNumber.TabIndex = 33;
+            this.comboBoxAccNumber.SelectedItemChanged += new System.EventHandler(this.comboBoxAccNumber_SelectedItemChanged);
+            // 
             // FirstStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(405, 244);
+            this.ClientSize = new System.Drawing.Size(405, 276);
+            this.Controls.Add(this.comboBoxTimer);
+            this.Controls.Add(this.comboBoxAccNumber);
+            this.Controls.Add(this.checkBox_autoLogin);
+            this.Controls.Add(this.checkBox_notifyIcon);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -353,5 +417,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox checkBox_notifyIcon;
+        private System.Windows.Forms.CheckBox checkBox_autoLogin;
+        private System.Windows.Forms.DomainUpDown comboBoxTimer;
+        private System.Windows.Forms.DomainUpDown comboBoxAccNumber;
     }
 }

@@ -11,8 +11,19 @@ namespace Steam_Auto_Login_v2
         public Main()
         {
             InitializeComponent();
+            
+            this.ShowInTaskbar = false;
+            notifyIcon.Click += notifyIcon_Click;
+
+            enterAccount_.Click += enterAccount_Click;
+            selectSteamPath_.Click += selectSteamPath_Click;
+            manualStart_.Click += manualStart_Click;
+            manualStartTCP_.Click += manualStartTCP_Click;
+            mExit_.Click += mExit_Click;
+
             Login.ReadLogin();
             Pass.ReadPass();
+
             //Acc1
             if (Properties.Settings.Default.AccOn1 == true)
             {
@@ -27,6 +38,7 @@ namespace Steam_Auto_Login_v2
             }
             else
                 acc1.Text = "*DISABLE*";
+
             //Acc2
             if (Properties.Settings.Default.AccOn2 == true)
             {
@@ -41,6 +53,7 @@ namespace Steam_Auto_Login_v2
             }
             else
                 acc2.Text = "*DISABLE*";
+
             //Acc3
             if (Properties.Settings.Default.AccOn3 == true)
             {
@@ -55,6 +68,7 @@ namespace Steam_Auto_Login_v2
             }
             else
                 acc3.Text = "*DISABLE*";
+
             //Acc4
             if (Properties.Settings.Default.AccOn4 == true)
             {
@@ -135,6 +149,11 @@ namespace Steam_Auto_Login_v2
             Process.Start(Properties.Settings.Default.SteamPath);
         }
 
+        private void manualStartTCP_Click(object sender, EventArgs e)
+        {
+            Process.Start(Properties.Settings.Default.SteamPath, "-tcp");
+        }
+
         private void mExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -144,6 +163,11 @@ namespace Steam_Auto_Login_v2
         {
             Info f3 = new Info();
             f3.ShowDialog();
+        }
+
+        void notifyIcon_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

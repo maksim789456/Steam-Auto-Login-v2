@@ -17,11 +17,11 @@ namespace Steam_Auto_Login_v2
             Application.SetCompatibleTextRenderingDefault(false);
             if (Properties.Settings.Default.firstStart == false)
             {
-                Application.Run(new FirstStart());
+                Application.Run(new TFA_1());
             }
             else
             {
-                Application.Run(new Main());
+                Application.Run(new TFA_Login());
             }
         }
         public class Login
@@ -38,6 +38,11 @@ namespace Steam_Auto_Login_v2
             public static string Pass2 = "";
             public static string Pass3 = "";
             public static string Pass4 = "";
+        }
+
+        public class Key
+        {
+            public static string key = "";
         }
     }
 }
