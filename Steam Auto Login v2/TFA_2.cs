@@ -5,6 +5,8 @@ using System.Net;
 using Microsoft.Win32;
 using System.IO;
 
+//Copyright © maksim789456  2017
+
 namespace Steam_Auto_Login_v2
 {
     public partial class TFA_2 : Form

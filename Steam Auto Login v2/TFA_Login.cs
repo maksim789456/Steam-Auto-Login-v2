@@ -3,6 +3,8 @@ using Google.Authenticator;
 using Microsoft.Win32;
 using System.Windows.Forms;
 
+//Copyright © maksim789456  2017
+
 namespace Steam_Auto_Login_v2
 {
     public partial class TFA_Login : Form

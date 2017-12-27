@@ -1,61 +1,69 @@
-﻿//Copyright © maksim789456  2017
+﻿using Microsoft.Win32;
+
+//Copyright © maksim789456  2017
 
 namespace Steam_Auto_Login_v2
 {
     class Encryption
     {
+        public static string keyG = "";
+
+        public static void Key()
+        {
+            RegistryKey registryKey = Registry.CurrentUser;
+            RegistryKey keyR = registryKey.OpenSubKey("Steam Auto Login");
+            keyG = keyR.GetValue("key").ToString();
+        }
+
         public static string Coding(string passwordC)
         {
-            string key = "testtesttest";
+            Key();
             string all = @"`1234567890-=~!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}asdfghjkl;'\ASDFGHJKL:""|ZXCVBNM<>?zxcvbnm,./№ёЁйцукенгшщзхъЙЦУКЕНГШЩЗХЪфывапролджэФЫВАПРОЛДЖЭячсмитьбюЯЧСМИТЬБЮ";
             string st; int center;
             string leftSlice, rightSlice, cPass = "";
 
-            if (key.Length > passwordC.Length)
+            if (keyG.Length > passwordC.Length)
             {
-                key = key.Substring(0, passwordC.Length);
+                keyG = keyG.Substring(0, passwordC.Length);
             }
             else
-                for (int i = 0; key.Length < passwordC.Length; i++)
+                for (int i = 0; keyG.Length < passwordC.Length; i++)
                 {
-                    key = key + key.Substring(i, 1);
+                    keyG = keyG + keyG.Substring(i, 1);
                 }
             for (int i = 0; i < passwordC.Length; i++)
             {
-                center = all.IndexOf(key.Substring(i, 1));
+                center = all.IndexOf(keyG.Substring(i, 1));
                 leftSlice = all.Substring(center);
                 rightSlice = all.Substring(0, center);
                 st = leftSlice + rightSlice;
                 center = all.IndexOf(passwordC.Substring(i, 1));
                 cPass += st.Substring(center, 1);
             }
-
             return cPass;
         }
 
         public static string Uncoding(string passwordD)
         {
-            string key = "testtesttest";
+            Key();
             string all = @"`1234567890-=~!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}asdfghjkl;'\ASDFGHJKL:""|ZXCVBNM<>?zxcvbnm,./№ёЁйцукенгшщзхъЙЦУКЕНГШЩЗХЪфывапролджэФЫВАПРОЛДЖЭячсмитьбюЯЧСМИТЬБЮ";
             string st; int center;
             string leftSlice, rightSlice, cPass = "";
 
-
-            if (key.Length > passwordD.Length)
+            if (keyG.Length > passwordD.Length)
             {
-                key = key.Substring(0, passwordD.Length);
+                keyG = keyG.Substring(0, passwordD.Length);
             }
 
             else
-                for (int i = 0; key.Length < passwordD.Length; i++)
+                for (int i = 0; keyG.Length < passwordD.Length; i++)
                 {
-                    key = key + key.Substring(i, 1);
+                    keyG = keyG + keyG.Substring(i, 1);
                 }
 
             for (int i = 0; i < passwordD.Length; i++)
             {
-
-                center = all.IndexOf(key.Substring(i, 1));
+                center = all.IndexOf(keyG.Substring(i, 1));
                 leftSlice = all.Substring(center);
                 rightSlice = all.Substring(0, center);
                 st = leftSlice + rightSlice;
