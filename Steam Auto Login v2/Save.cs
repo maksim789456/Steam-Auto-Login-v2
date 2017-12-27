@@ -1,23 +1,13 @@
-﻿using Microsoft.Win32;
-
-//Copyright © maksim789456  2017
+﻿//Copyright © maksim789456  2017
 
 namespace Steam_Auto_Login_v2
 {
     class Encryption
     {
-        public static string keyG = "";
-
-        public static void Key()
-        {
-            RegistryKey registryKey = Registry.CurrentUser;
-            RegistryKey keyR = registryKey.OpenSubKey("Steam Auto Login");
-            keyG = keyR.GetValue("key").ToString();
-        }
+        public static string keyG = Program.KeyG.key;
 
         public static string Coding(string passwordC)
         {
-            Key();
             string all = @"`1234567890-=~!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}asdfghjkl;'\ASDFGHJKL:""|ZXCVBNM<>?zxcvbnm,./№ёЁйцукенгшщзхъЙЦУКЕНГШЩЗХЪфывапролджэФЫВАПРОЛДЖЭячсмитьбюЯЧСМИТЬБЮ";
             string st; int center;
             string leftSlice, rightSlice, cPass = "";
@@ -45,7 +35,6 @@ namespace Steam_Auto_Login_v2
 
         public static string Uncoding(string passwordD)
         {
-            Key();
             string all = @"`1234567890-=~!@#$%^&*()_+qwertyuiop[]QWERTYUIOP{}asdfghjkl;'\ASDFGHJKL:""|ZXCVBNM<>?zxcvbnm,./№ёЁйцукенгшщзхъЙЦУКЕНГШЩЗХЪфывапролджэФЫВАПРОЛДЖЭячсмитьбюЯЧСМИТЬБЮ";
             string st; int center;
             string leftSlice, rightSlice, cPass = "";

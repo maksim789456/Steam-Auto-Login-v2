@@ -1,6 +1,5 @@
 ﻿using System;
 using Google.Authenticator;
-using Microsoft.Win32;
 using System.Windows.Forms;
 
 //Copyright © maksim789456  2017
@@ -126,12 +125,8 @@ namespace Steam_Auto_Login_v2
 
         private void buttonK_Click(object sender, EventArgs e)
         {
-            RegistryKey registryKey = Registry.CurrentUser;
-            RegistryKey keyR = registryKey.OpenSubKey("Steam Auto Login");
-            string key = keyR.GetValue("key").ToString();
-
             TwoFactorAuthenticator tfa = new TwoFactorAuthenticator();
-            bool corrctPin = tfa.ValidateTwoFactorPIN(key, textBox.Text);
+            bool corrctPin = tfa.ValidateTwoFactorPIN(Program.KeyG.key, textBox.Text);
 
             if (corrctPin == true)
             {
