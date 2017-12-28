@@ -141,6 +141,7 @@ namespace Steam_Auto_Login_v2
 
         private void buttonC_Click(object sender, EventArgs e)
         {
+            i = 0;
             textBox.Text = "";
         }
     }

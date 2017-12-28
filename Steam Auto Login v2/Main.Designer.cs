@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.label1 = new System.Windows.Forms.Label();
-            this.acc1 = new System.Windows.Forms.Button();
             this.acc3 = new System.Windows.Forms.Button();
             this.acc2 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -39,6 +38,9 @@
             this.menuMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.enterAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.selectSteamPath = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStartToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStart = new System.Windows.Forms.ToolStripMenuItem();
+            this.manualStartTCP = new System.Windows.Forms.ToolStripMenuItem();
             this.mExit = new System.Windows.Forms.ToolStripMenuItem();
             this.infoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.infoAboutProgramm = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,9 +57,7 @@
             this.manualStartTCP_ = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1_ = new System.Windows.Forms.ToolStripSeparator();
             this.mExit_ = new System.Windows.Forms.ToolStripMenuItem();
-            this.manualStartToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.manualStart = new System.Windows.Forms.ToolStripMenuItem();
-            this.manualStartTCP = new System.Windows.Forms.ToolStripMenuItem();
+            this.acc1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip_.SuspendLayout();
             this.SuspendLayout();
@@ -72,16 +72,6 @@
             this.label1.Size = new System.Drawing.Size(116, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Аккаунты:";
-            // 
-            // acc1
-            // 
-            this.acc1.Location = new System.Drawing.Point(16, 63);
-            this.acc1.Name = "acc1";
-            this.acc1.Size = new System.Drawing.Size(121, 76);
-            this.acc1.TabIndex = 3;
-            this.acc1.Text = "1";
-            this.acc1.UseVisualStyleBackColor = true;
-            this.acc1.Click += new System.EventHandler(this.acc1_Click);
             // 
             // acc3
             // 
@@ -148,6 +138,28 @@
             this.selectSteamPath.Size = new System.Drawing.Size(194, 22);
             this.selectSteamPath.Text = "Выбор файла Steam...";
             this.selectSteamPath.Click += new System.EventHandler(this.selectSteamPath_Click);
+            // 
+            // manualStartToolStripMenu
+            // 
+            this.manualStartToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manualStart,
+            this.manualStartTCP});
+            this.manualStartToolStripMenu.Name = "manualStartToolStripMenu";
+            this.manualStartToolStripMenu.Size = new System.Drawing.Size(194, 22);
+            this.manualStartToolStripMenu.Text = "Ручной запуск";
+            // 
+            // manualStart
+            // 
+            this.manualStart.Name = "manualStart";
+            this.manualStart.Size = new System.Drawing.Size(203, 22);
+            this.manualStart.Text = "Обычный";
+            // 
+            // manualStartTCP
+            // 
+            this.manualStartTCP.Name = "manualStartTCP";
+            this.manualStartTCP.Size = new System.Drawing.Size(203, 22);
+            this.manualStartTCP.Text = "С использованием TCP";
+            this.manualStartTCP.Click += new System.EventHandler(this.manualStartTCP_Click);
             // 
             // mExit
             // 
@@ -268,27 +280,15 @@
             this.mExit_.Size = new System.Drawing.Size(194, 22);
             this.mExit_.Text = "Выход";
             // 
-            // manualStartToolStripMenu
+            // acc1
             // 
-            this.manualStartToolStripMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manualStart,
-            this.manualStartTCP});
-            this.manualStartToolStripMenu.Name = "manualStartToolStripMenu";
-            this.manualStartToolStripMenu.Size = new System.Drawing.Size(194, 22);
-            this.manualStartToolStripMenu.Text = "Ручной запуск";
-            // 
-            // manualStart
-            // 
-            this.manualStart.Name = "manualStart";
-            this.manualStart.Size = new System.Drawing.Size(203, 22);
-            this.manualStart.Text = "Обычный";
-            // 
-            // manualStartTCP
-            // 
-            this.manualStartTCP.Name = "manualStartTCP";
-            this.manualStartTCP.Size = new System.Drawing.Size(203, 22);
-            this.manualStartTCP.Text = "С использованием TCP";
-            this.manualStartTCP.Click += new System.EventHandler(this.manualStartTCP_Click);
+            this.acc1.Location = new System.Drawing.Point(16, 63);
+            this.acc1.Name = "acc1";
+            this.acc1.Size = new System.Drawing.Size(121, 76);
+            this.acc1.TabIndex = 3;
+            this.acc1.Text = "1";
+            this.acc1.UseVisualStyleBackColor = true;
+            this.acc1.Click += new System.EventHandler(this.acc1_Click);
             // 
             // Main
             // 

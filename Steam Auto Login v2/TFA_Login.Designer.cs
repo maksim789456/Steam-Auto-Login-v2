@@ -130,7 +130,7 @@
             this.button8.TabIndex = 8;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button9_Click);
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -141,6 +141,7 @@
             this.button9.TabIndex = 9;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // textBox
             // 
@@ -148,7 +149,7 @@
             this.textBox.MaxLength = 6;
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(162, 20);
-            this.textBox.TabIndex = 12;
+            this.textBox.TabIndex = 1;
             this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // buttonC
@@ -157,7 +158,7 @@
             this.buttonC.Location = new System.Drawing.Point(12, 191);
             this.buttonC.Name = "buttonC";
             this.buttonC.Size = new System.Drawing.Size(50, 45);
-            this.buttonC.TabIndex = 13;
+            this.buttonC.TabIndex = 11;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = true;
             this.buttonC.Click += new System.EventHandler(this.buttonC_Click);
@@ -168,7 +169,7 @@
             this.buttonK.Location = new System.Drawing.Point(124, 191);
             this.buttonK.Name = "buttonK";
             this.buttonK.Size = new System.Drawing.Size(50, 45);
-            this.buttonK.TabIndex = 14;
+            this.buttonK.TabIndex = 12;
             this.buttonK.Text = "K";
             this.buttonK.UseVisualStyleBackColor = true;
             this.buttonK.Click += new System.EventHandler(this.buttonK_Click);
@@ -179,7 +180,7 @@
             this.button0.Location = new System.Drawing.Point(68, 191);
             this.button0.Name = "button0";
             this.button0.Size = new System.Drawing.Size(50, 45);
-            this.button0.TabIndex = 15;
+            this.button0.TabIndex = 10;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
             // 
