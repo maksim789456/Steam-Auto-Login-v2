@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("maksim789456")]
 [assembly: AssemblyProduct("Steam Auto Login")]
-[assembly: AssemblyCopyright("Copyright © maksim789456  2017")]
+[assembly: AssemblyCopyright("Copyright © maksim789456 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

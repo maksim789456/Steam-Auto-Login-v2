@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Diagnostics;
 
-//Copyright © maksim789456  2017
+//Copyright © maksim789456 2018
 
 namespace Steam_Auto_Login_v2
 {
